@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Administrador</title>
+    <link rel="stylesheet" href="styles_admin.css">
+</head>
+<body>
+    <div class="bloco">
+        <header>
+            <h1>Área do Administrador</h1>
+        </header>
+        <div class="line"></div>
+        <div class="button-group">
+            <button type="button" class="button" onclick="mostrarCadastroProfessores()">Cadastrar Professores</button>
+            <button type="button" class="button" onclick="window.location.href='cadastro_pedag.html'">Pedagógico</button>
+            <button type="button" class="button" onclick="window.location.href='plano_de_aula.html'">Plano de Aula</button>
+        </div>
+        <div id="cadastroProfessores" style="display: none;">
+            <h2>Cadastrar Professor</h2>
+            <form id="professorForm">
+                <div class="form-group">
+                    <label for="nomeProfessor">Nome do Professor:</label>
+                    <input type="text" id="nomeProfessor" name="nomeProfessor" class="input_cadastro" placeholder="Digite o nome do professor" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginProfessor">Login:</label>
+                    <input type="text" id="loginProfessor" name="loginProfessor" class="input_cadastro" placeholder="Digite o login do professor" required>
+                </div>
+                <div class="form-group">
+                    <label for="senhaProfessor">Senha:</label>
+                    <input type="password" id="senhaProfessor" name="senhaProfessor" class="input_cadastro" placeholder="Digite a senha do professor" required>
+                </div>
+                <div class="form-group">
+                    <label for="componentesCurriculares">Componentes Curriculares:</label>
+                    <textarea id="componentesCurriculares" name="componentesCurriculares" class="area-texto auto-resize" rows="4" cols="50" placeholder="Digite os componentes curriculares (um por linha)"></textarea>
+                </div>
+                <button type="button" class="button" onclick="cadastrarProfessor()">Cadastrar Professor</button>
+                <div class="bar"></div>
+            </form>
+            <h2>Professores Cadastrados</h2>
+            <div id="listaProfessores"></div>
+        </div>
+        <button type="button" class="button" onclick="logout()">Sair</button>
+        <div class="bar_footer"></div>
+    </div>
+    <script src="script_admin.js"></script>
+</body>
+</html>

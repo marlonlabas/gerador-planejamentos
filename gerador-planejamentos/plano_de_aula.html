@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Aula</title>
+    <link rel="stylesheet" href="styles_plano.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="bloco">
+        <a class="button" href="index.html">Início</a>
+        <header>
+            <h1>Plano de Aula</h1>
+        </header>
+        <div class="line"></div>
+        <form id="planoForm">
+            <div id="identificacao">
+                <div class="form-group-vigencia">
+                    <label class="vigencia-label" for="vigenciaDe">Vigência (de): </label>
+                    <input class="vigencia-date" type="date" id="vigenciaDe" name="vigenciaDe">
+                    <label class="vigencia-label" for="vigenciaAte">até:</label>
+                    <input class="vigencia-date" type="date" id="vigenciaAte" name="vigenciaAte">
+                </div>
+                <div class="form-group">
+                    <label for="escolaPlano">Unidade escolar:</label>
+                    <select id="escolaPlano" name="escolaPlano">
+                        <option value="">Selecione uma escola</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nomeProfessorPlano">Professor(a):</label>
+                    <select id="nomeProfessorPlano" name="nomeProfessorPlano">
+                        <option value="">Selecione um professor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="componenteCurricularPlano">Componente Curricular:</label>
+                    <select id="componenteCurricularPlano" name="componenteCurricularPlano">
+                        <option value="">Selecione um componente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="serieTurma">Série/Turma:</label>
+                    <select id="serieTurma" name="serieTurma">
+                        <option value="">Selecione uma série/turma</option>
+                        <option value="1º Ano">1º Ano</option>
+                        <option value="2º Ano">2º Ano</option>
+                        <option value="3º Ano">3º Ano</option>
+                    </select>
+                </div>
+                <div class="bar"></div>
+                <div class="form-group">
+                    <label for="objetosConhecimento">Objetos do Conhecimento</label>
+                    <textarea class="area-texto" id="objetosConhecimento" name="objetosConhecimento" class="auto-resize" rows="4" cols="50" placeholder="Digite os objetos do conhecimento (cada linha será um item)"></textarea>
+                </div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="habilidades-area">
+                <div class="form-group">
+                    <label>Habilidades</label>
+                    <div id="containerSelect"></div>
+                    <button type="button" class="add_button" onclick="adicionarSelect()">+</button>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+            <div class="criterios-area">
+                <div class="form-group">
+                    <label>Critérios de Avaliação</label>
+                    <div id="criteriosAvaliacaoContainer"></div>
+                    <button type="button" class="add_button" onclick="adicionarCriterioSelect()">+</button>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+            <div class="instrumentos-area">
+                <div class="form-group">
+                    <label>Instrumentos de Avaliação</label>
+                    <div id="instrumentosAvaliacaoContainer"></div>
+                    <button type="button" class="add_button" onclick="adicionarInstrumentoSelect()">+</button>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+            <div class="aulas-area">
+                <div class="form-group">
+                    <label>Aulas</label>
+                    <div id="aulaFieldsContainer"></div>
+                    <button type="button" class="add_button" onclick="adicionarAulaField()">+</button>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+            <div class="referencias-bibliograficas">
+                <div class="form-group">
+                    <label for="referenciasBibliograficas">Referências Bibliográficas</label>
+                    <textarea id="referenciasBibliograficas" name="referenciasBibliograficas" rows="4" cols="50" class="auto-resize" placeholder="Liste as referências bibliográficas"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="planosSalvos">Planos Salvos</label>
+                <select id="planosSalvos" name="planosSalvos">
+                    <option value="">Selecione um plano salvo</option>
+                </select>
+                <button type="button" class="button" onclick="carregarPlano()">Carregar Plano</button>
+                <button type="button" class="button" onclick="excluirPlano()">Excluir Plano</button>
+            </div>
+
+            <button type="button" class="button" id="salvarPlano">Salvar Plano</button>
+            <button type="button" class="button" id="gerarPDF">Gerar PDF</button>
+            <button type="button" class="button" onclick="logout()">Sair</button>
+            <div class="bar_footer"></div>
+        </form>
+    </div>
+    <script src="script_plano.js"></script>
+</body>
+</html>

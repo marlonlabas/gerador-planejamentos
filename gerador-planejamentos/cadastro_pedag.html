@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Pedagógico</title>
+    <link rel="stylesheet" href="styles_pedag.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 50px;
+            resize: vertical; /* Permite redimensionamento vertical pelo usuário */
+        }
+    </style>
+</head>
+<body>
+    <div class="bloco">
+    <section class="banner">
+        <div class="line"></div>
+        <a class="button" href="index.html">Início</a>
+        <div class="container">
+            <br/>
+            <h1>Cadastro Pedagógico </h1>
+            <span>Faça o seu cadastro aqui.</span>
+        </div>
+    </section>
+
+    <div id="habilidadeSection" class="form-group">
+        <h2>Habilidades</h2>
+        <textarea class="imput_cadastro" id="habilidadeInput" placeholder="Digite a habilidade..."></textarea>
+        <button class="button" onclick="saveItem('habilidade')">Salvar Habilidade</button>
+    </div>
+
+    <div id="criterioSection" class="form-group">
+        <h2>Critérios de Avaliação</h2>
+        <textarea class="imput_cadastro" id="criterioInput" placeholder="Digite o critério de avaliação..."></textarea>
+        <button class="button" onclick="saveItem('criterio')">Salvar Critério</button>
+    </div>
+
+    <div id="instrumentoSection" class="form-group">
+        <h2>Instrumentos de Avaliação</h2>
+        <textarea class="imput_cadastro" id="instrumentoInput" placeholder="Digite o instrumento de avaliação..."></textarea>
+        <button class="button" onclick="saveItem('instrumento')">Salvar Instrumento</button>
+    </div>
+    </div>
+    <script src="script_pedag.js"></script>
+</body>
+</html>

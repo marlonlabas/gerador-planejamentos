@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styles_cadastro.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="bloco">
+    <section class="banner">
+        <div class="line"></div>
+        <a class="button" href="index.html">Início</a>
+        
+        <section class="area1--content">
+            <button class="button" onclick="logout()">Sair</button>
+        </section>
+        
+        <div class="container">
+            <br/>
+            <h1>Cadastro <br/> de Professor </h1>
+            <span>Faça o seu cadastro aqui.</span>
+        </div>
+    </section>
+    
+    <form class="container" id="cadastroForm">
+        <div class="bar"></div><br/>
+        <input class="imput_cadastro" type="text" id="nomeProfessor" name="nomeProfessor" placeholder="Nome do(a) professor(a)" required><br><br>
+        <input class="imput_cadastro" type="text" id="nomeEscola" name="nomeEscola" placeholder="Unidade Escolar" required><br><br>
+
+        <select class="imput_cadastro" id="componenteCurricular" name="componenteCurricular" required>
+            <option value="">Selecione um componente</option>
+            <option value="Física">Física</option>
+            <option value="Matemática">Matemática</option>
+            <option value="Português">Português</option>
+        </select><br><br>
+
+    </form>
+
+    <section class="area1--content">
+        <button class="button" type="submit">Salvar</button>    
+    </section>
+
+        
+    <div class="bar_footer"></div><br/>
+    </div>
+    <script src="script_cadastro.js"></script>
+</body>
+</html>
